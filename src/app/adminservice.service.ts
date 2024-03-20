@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CONSTANTS } from './constants';
 @Injectable({
   providedIn: 'root'
 })
 export class AdminserviceService {
-  
+  serverUrl = CONSTANTS.serverUrl
   header: any
   jwttoken(): any {
     this.header = {
@@ -13,19 +14,15 @@ export class AdminserviceService {
       }),
     }
     return this.header;
-
   }
   constructor(private http: HttpClient) { }
-
-  adminLogin(data:any){
-    return this.http.post('http://localhost:3009/user/login',data)
+  adminLogin(data: any) {
+    return this.http.post(this.serverUrl + '/user/login', data)
   };
-
-  getSales(){
-    return this.http.get('http://localhost:3009/sale/getsales',this.jwttoken())
+  getSales() {
+    return this.http.get(this.serverUrl + '/sale/getsales', this.jwttoken())
   };
-
-  addSale(data:any){
-    return this.http.post('http://localhost:3009/sale/addsale',data)
+  addSale(data: any) {
+    return this.http.post(this.serverUrl + '/sale/addsale', data)
   }
 }
