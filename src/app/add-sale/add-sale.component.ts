@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminserviceService } from '../adminservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-sale',
@@ -8,7 +9,7 @@ import { AdminserviceService } from '../adminservice.service';
   styleUrls: ['./add-sale.component.css']
 })
 export class AddSaleComponent implements OnInit{
-  constructor(private fb:FormBuilder,private api:AdminserviceService,){}
+  constructor(private fb:FormBuilder,private api:AdminserviceService,private router:Router){}
   addSaleform!:FormGroup
   ngOnInit(): void {
     this.addSaleform = this.fb.group({
@@ -29,8 +30,15 @@ export class AddSaleComponent implements OnInit{
 
   addsale(){
     this.api.addSale(this.addSaleform.value).subscribe((res)=>{
+      this.router.navigate(['/viewsale']);
       console.log(res,'addsale')
     })
+  }
+
+  logout() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('utoken');
+    this.router.navigate(['/']);
   }
 
 }

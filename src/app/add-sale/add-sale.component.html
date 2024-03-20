@@ -1,63 +1,66 @@
-<div class="container">
-    <img src="../assets/logo.png" class="rounded mx-auto d-block p-2 logo">
-    <h1 class="text-center mt-3">Add Sale</h1>
-        
-             <form [formGroup]="addSaleform">
-                <div class="row"> 
-                <div class="col-sm-6">     
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="fullname">  
-                </div>
+<div class="container-fluid p-3">
+  <div class="row">
+    <div class="shadow">
+    <i class="bi bi-arrow-left h3 float-start" routerLink="/viewsale" ></i><span class="h3">New Sale</span>
+    <i class="bi bi-box-arrow-right h3 text-danger float-end" (click)="logout()"></i>
+  </div>
+  </div>
+  <div class="row mt-3">
+    <form [formGroup]="addSaleform">
+      <div class="row"> 
+      <div class="col-sm-6">     
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="fullname">  
+      </div>
 
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Address</label>
-                    <textarea class="form-control"  id="floatingTextarea" formControlName="address"></textarea>
-                </div> 
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Address</label>
+          <textarea class="form-control"  id="floatingTextarea" formControlName="address"></textarea>
+      </div> 
 
-                <div class="mb-3">
-                  <label for="exampleInputPassword1" class="form-label">Mobile No.</label>
-                  <input type="number" class="form-control" id="exampleInputPassword1" formControlName="mobileno">
-                </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Mobile No.</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" formControlName="mobileno">
+      </div>
 
-                      
-                <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Particulars</label>
-                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="particulars"> 
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Items</label>
-                    <select class="form-select" id="inputGroupSelect01" formControlName="items">
-                      <option selected><select name="" id=""></select></option>
-                      <option value="mobile">mobile</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">IMEI Number</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="imei"> 
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Estimated Amount</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="estimatedamount"> 
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Advance Amount</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="advanceamount"> 
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Balance Amount</label>
-                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="balaceamount"> 
-                  </div>
-                </div>
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary mt-4" (click)="addsale()">Submit</button>
+            
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Particulars</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="particulars"> 
+      </div>
+  </div>
+  <div class="col-sm-6">
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Items</label>
+          <select class="form-select" id="inputGroupSelect01" formControlName="items">
+            <option selected><select name="" id=""></select></option>
+            <option value="mobile">mobile</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+      </div>
+      <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">IMEI Number</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="imei"> 
         </div>
-    </div>
-    </form> 
-    
-    
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Estimated Amount</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="estimatedamount"> 
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Advance Amount</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="advanceamount"> 
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Balance Amount</label>
+          <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="balaceamount"> 
+        </div>
+      </div>
+<div class="text-center">
+  <button type="submit" class="btn btn-primary mt-4" (click)="addsale()">Submit</button>
 </div>
+</div>
+</form> 
+  </div>
+  </div>
