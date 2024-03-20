@@ -9,13 +9,19 @@ import { Router } from '@angular/router';
 })
 export class ViewsaleComponent implements OnInit{
 
-  constructor(private api:AdminserviceService,private router:Router,){}
+  constructor(private api:AdminserviceService,private router:Router){}
   sales:any
   ngOnInit(): void {
     this.api.getSales().subscribe((res)=>{
       this.sales = res
       console.log(this.sales,'sales')
     })
+  }
+
+  logout() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('utoken');
+    this.router.navigate(['/']);
   }
 
 }
