@@ -14,7 +14,6 @@ export class ViewsaleComponent implements OnInit{
   ngOnInit(): void {
     this.api.getSales().subscribe((res)=>{
       this.sales = res
-      console.log(this.sales,'sales')
     })
   }
 

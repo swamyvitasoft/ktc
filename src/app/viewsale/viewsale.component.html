@@ -8,17 +8,18 @@
     <div class="row mt-3">
         <div class="card">
           <div class="card-body">
-            <a routerLink="/add-sale" class="card-title text-decoration-none">&#43; New Sale</a>
+            <a routerLink="/add-sale" class="card-title text-decoration-none text-primary">&#43; New Sale</a>
           </div>
         </div>
     </div>
-    <div class="row">
-        <div class="card mt-2 bg-primary" *ngFor="let s of sales">
-          <div class="card-body">
-            <div class="card-title text-white">
-                    <p class="float-start">{{s.fullname}} ({{s.mobileno}})</p>
-                    <p class="float-end">{{s.estimatedamount}}/-</p>
-              </div> 
+    <div class="row mt-2" *ngFor="let s of sales">
+        <div class="card shadow" >
+          <div class="card-title">
+            <div class="d-flex align-items-center justify-content-between">
+              <p >{{s.fullname}}<br>({{s.mobileno}})</p>
+              <p>{{s.particulars}}<br>{{s.items}}</p>
+              <p>{{s.estimatedamount}}<br>{{s.advanceamount}}<br>{{s.balaceamount}}</p>
+            </div>
           </div>
         </div>
     </div>

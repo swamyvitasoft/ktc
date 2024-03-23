@@ -1,24 +1,25 @@
 <div class="container-fluid p-3">
     <div class="row">
       <div class="shadow">
-      <img src="../assets/logo.png" class="rounded w-25 float-start">
-      <i class="bi bi-box-arrow-right h3 text-danger float-end" (click)="logout()"></i>
+        <div class="d-flex flex-wrap">
+            <img src="../assets/logo.png" class="img-fluid" style="width: 20%;">
+            <div style="margin-left: 20px;">
+                <h1 style="font-family: 'Brush Script MT', cursive;color: #af1289;">Kalyan</h1>
+                <h6 style="color: #f89609;">TIMES & COMMUNICATIONS</h6>
+            </div>
+            <i class="bi bi-box-arrow-right h1 m-3 text-danger" (click)="logout()"></i>
+        </div>
     </div>
     </div>
-    <div class="row mt-3">
-        <div class="card p-5">
-            <p class="card-title">Kalyan Times & Communications</p>
-            </div>
-            </div>
             <div class="row mt-3 mb-5">
                 <div class="col-6">
-                        <div class="card p-5 bg-primary">
-                           <p class="text-center text-white">Items</p> 
+                        <div class="card p-4 bg-primary">
+                           <p class="text-center text-white h3"><i class="bi bi-bookmark-plus"></i> Items<br>50</p> 
                         </div>
                 </div>
                 <div class="col-6">
-                        <div class="card p-5 bg-primary">
-                            <p class="text-center text-white" routerLink="/viewsale">Sales</p>
+                        <div class="card p-4 bg-primary">
+                            <p class="text-center text-white h3" routerLink="/viewsale"><i class="bi bi-receipt"></i> Sales<br>{{ sales.length}}</p>
                         </div>
                 </div>
                 </div>
