@@ -11,9 +11,13 @@ export class DashboardComponent implements OnInit{
   constructor(private api:AdminserviceService,private router:Router){}
 
   sales:any
+  items:any
   ngOnInit(): void {
     this.api.getSales().subscribe((res)=>{
       this.sales = res
+    })
+    this.api.getItems().subscribe((res)=>{
+      this.items = res
     })
   }
 

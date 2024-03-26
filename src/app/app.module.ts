@@ -9,6 +9,8 @@ import { ViewsaleComponent } from './viewsale/viewsale.component';
 import { AddSaleComponent } from './add-sale/add-sale.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewitemsComponent } from './viewitems/viewitems.component';
+import { AdditemComponent } from './additem/additem.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     DashboardComponent,
     ViewsaleComponent,
-    AddSaleComponent
+    AddSaleComponent,
+    ViewitemsComponent,
+    AdditemComponent
   ],
   imports: [
     BrowserModule,

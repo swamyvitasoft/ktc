@@ -25,4 +25,10 @@ export class AdminserviceService {
   addSale(data: any) {
     return this.http.post(this.serverUrl + '/sale/addsale', data)
   }
+  getItems() {
+    return this.http.get(this.serverUrl + '/item/getitems', this.jwttoken())
+  };
+  addItem(data: any) {
+    return this.http.post(this.serverUrl + '/item/additem', data)
+  }
 }

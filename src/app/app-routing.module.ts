@@ -4,12 +4,16 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewsaleComponent } from './viewsale/viewsale.component';
 import { AddSaleComponent } from './add-sale/add-sale.component';
+import { ViewitemsComponent } from './viewitems/viewitems.component';
+import { AdditemComponent } from './additem/additem.component';
 
 const routes: Routes = [
   {'path':'', component:LoginComponent},
   { 'path':'dashboard',component:DashboardComponent},
   { 'path':'viewsale',component:ViewsaleComponent},
-  { 'path':'add-sale',component:AddSaleComponent}
+  { 'path':'add-sale',component:AddSaleComponent},
+  { 'path':'viewitems',component:ViewitemsComponent},
+  { 'path':'additem',component:AdditemComponent}
 ];
 
 @NgModule({
