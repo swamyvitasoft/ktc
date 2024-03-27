@@ -12,7 +12,7 @@ export class TodaysalesComponent implements OnInit{
   constructor(private api:AdminserviceService,private router:Router){}
   todaysales:any
   ngOnInit(): void {
-    this.api.getSales().subscribe((res)=>{
+    this.api.getTodaySales().subscribe((res)=>{
       this.todaysales = res
     })
   }

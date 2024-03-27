@@ -12,7 +12,7 @@ export class MonthsalesComponent implements OnInit{
   constructor(private api:AdminserviceService,private router:Router){}
   monthsales:any
   ngOnInit(): void {
-    this.api.getSales().subscribe((res)=>{
+    this.api.getMonthSales().subscribe((res)=>{
       this.monthsales = res
     })
   }

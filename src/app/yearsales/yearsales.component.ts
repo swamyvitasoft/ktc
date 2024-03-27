@@ -12,7 +12,7 @@ export class YearsalesComponent implements OnInit{
   constructor(private api:AdminserviceService,private router:Router){}
   yearsales:any
   ngOnInit(): void {
-    this.api.getSales().subscribe((res)=>{
+    this.api.getYearSales().subscribe((res)=>{
       this.yearsales = res
     })
   }

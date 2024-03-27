@@ -22,6 +22,19 @@ export class AdminserviceService {
   getSales() {
     return this.http.get(this.serverUrl + '/sale/getsales', this.jwttoken())
   };
+  getTodaySales() {
+    return this.http.get(this.serverUrl + '/sale/getTodaySales', this.jwttoken())
+  };
+  getTopSales() {
+    return this.http.get(this.serverUrl + '/sale/getTopSales', this.jwttoken())
+  };
+  getMonthSales() {
+    return this.http.get(this.serverUrl + '/sale/getMonthSales', this.jwttoken())
+  };
+  getYearSales() {
+    return this.http.get(this.serverUrl + '/sale/getYearSales', this.jwttoken())
+  };
+
   addSale(data: any) {
     return this.http.post(this.serverUrl + '/sale/addsale', data)
   }
