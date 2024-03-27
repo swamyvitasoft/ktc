@@ -1,21 +1,27 @@
 <div class="container-fluid p-3">
     <div class="row">
       <div class="shadow">
-      <i class="bi bi-arrow-left h3 float-start" routerLink="/viewsale" ></i><span class="h3">New Sale</span>
+      <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard" ></i><span class="h3">New Item</span>
       <i class="bi bi-box-arrow-right h3 text-danger float-end" (click)="logout()"></i>
     </div>
+    </div>
+    <div class="row mt-3">
+        <div class="card">
+          <div class="card-body">
+            <a routerLink="/viewitems" class="card-title text-decoration-none text-primary">&#43; Items List</a>
+          </div>
+        </div>
     </div>
     <div class="row mt-3">
       <form [formGroup]="addItemform">
         <div class="row"> 
         <div class="col-sm-6">     
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Item Name</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="itemname">  
+        <div class="mb-2">
+          <input type="text" class="form-control" id="itemname" formControlName="itemname" placeholder="Item Name">  
         </div>
         </div>
   <div class="text-center">
-    <button type="submit" class="btn btn-primary mt-4" (click)="additem()">Submit</button>
+    <button type="submit" class="btn btn-primary mt-2" (click)="additem()">Submit</button>
   </div>
   </div>
   </form> 

@@ -11,6 +11,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewitemsComponent } from './viewitems/viewitems.component';
 import { AdditemComponent } from './additem/additem.component';
+import { TopsalesComponent } from './topsales/topsales.component';
+import { TodaysalesComponent } from './todaysales/todaysales.component';
+import { MonthsalesComponent } from './monthsales/monthsales.component';
+import { YearsalesComponent } from './yearsales/yearsales.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { AdditemComponent } from './additem/additem.component';
     ViewsaleComponent,
     AddSaleComponent,
     ViewitemsComponent,
-    AdditemComponent
+    AdditemComponent,
+    TopsalesComponent,
+    TodaysalesComponent,
+    MonthsalesComponent,
+    YearsalesComponent
   ],
   imports: [
     BrowserModule,

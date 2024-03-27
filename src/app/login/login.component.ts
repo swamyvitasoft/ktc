@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder) { }
   ngOnInit(): void {
     this.adminLoginform = this.fb.group({
-      mobileno: ['', [Validators.required]],
+      mobileno: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
       password: ['', [Validators.required]]
     })
   }

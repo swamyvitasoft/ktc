@@ -6,14 +6,22 @@ import { ViewsaleComponent } from './viewsale/viewsale.component';
 import { AddSaleComponent } from './add-sale/add-sale.component';
 import { ViewitemsComponent } from './viewitems/viewitems.component';
 import { AdditemComponent } from './additem/additem.component';
+import { TopsalesComponent } from './topsales/topsales.component';
+import { TodaysalesComponent } from './todaysales/todaysales.component';
+import { MonthsalesComponent } from './monthsales/monthsales.component';
+import { YearsalesComponent } from './yearsales/yearsales.component';
 
 const routes: Routes = [
-  {'path':'', component:LoginComponent},
-  { 'path':'dashboard',component:DashboardComponent},
-  { 'path':'viewsale',component:ViewsaleComponent},
-  { 'path':'add-sale',component:AddSaleComponent},
-  { 'path':'viewitems',component:ViewitemsComponent},
-  { 'path':'additem',component:AdditemComponent}
+  { 'path': '', component: LoginComponent },
+  { 'path': 'dashboard', component: DashboardComponent },
+  { 'path': 'viewsale', component: ViewsaleComponent },
+  { 'path': 'add-sale', component: AddSaleComponent },
+  { 'path': 'viewitems', component: ViewitemsComponent },
+  { 'path': 'additem', component: AdditemComponent },
+  { 'path': 'topsales', component: TopsalesComponent },
+  { 'path': 'todaysales', component: TodaysalesComponent },
+  { 'path': 'monthsales', component: MonthsalesComponent },
+  { 'path': 'yearsales', component: YearsalesComponent }
 ];
 
 @NgModule({

@@ -1,41 +1,15 @@
 <div class="container">
     <img src="../assets/logo.png" class="rounded mx-auto d-block p-2 w-50">
     <h1 class="text-center mt-3">Sign In</h1>
-    <form [formGroup]="adminLoginform">
+    <form [formGroup]="adminLoginform"  (ngSubmit)="login()">
         <div class="mt-3">
-            <label for="validationPhoneNo" class="form-label">Phone Number</label>
-            <div class="input-group has-validation">
-                <input
-                    type="text"
-                    class="form-control is-valid"
-                    id="validationPhoneNo"
-                    aria-describedby="inputGroupPrepend1 validationPhoneNoMsg"
-                    required
-                    formControlName="mobileno"
-                >
-                <div id="validationPhoneNoMsg" class="valid-feedback">
-                    Please enter valid mobile number.
-                </div>
-            </div>
+            <input type="number" class="form-control" id="mobileno" formControlName="mobileno" placeholder="Phone Number"> 
         </div>
-        <div class="mt-3 label">
-            <label for="validationPwd" class="form-label">Password</label>
-            <div class="input-group has-validation">
-                <input
-                    type="password"
-                    class="form-control is-valid"
-                    id="validationPwd"
-                    aria-describedby="inputGroupPrepend2 validationPwdMsg"
-                    required
-                    formControlName="password"
-                >
-                <div id="validationPwdMsg" class="valid-feedback">
-                    Please enter valid password.
-                </div>
-            </div>
+        <div class="mt-3">
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
         </div>
         <div class="text-center p-3">
-            <button type="button" class="btn btn-success float-end" (click)="login()">Sign In</button>
+            <button type="submit" class="btn btn-success float-end" [disabled]="adminLoginform.invalid">Sign In</button>
         </div>
     </form>
 </div>

@@ -14,15 +14,41 @@
             <div class="row mt-3 mb-5">
                 <div class="col-6">
                         <div class="card p-4 bg-primary">
-                           <p class="text-center text-white h3" routerLink="/viewitems"><i class="bi bi-bookmark-plus"></i> Items<br>{{ items.length}}</p> 
+                           <p class="text-center text-white h3" routerLink="/additem">Items</p> 
                         </div>
                 </div>
                 <div class="col-6">
                         <div class="card p-4 bg-primary">
-                            <p class="text-center text-white h3" routerLink="/viewsale"><i class="bi bi-receipt"></i> Sales<br>{{ sales.length}}</p>
+                            <p class="text-center text-white h3" routerLink="/add-sale">Sales</p>
                         </div>
                 </div>
                 </div>
+
+                <div class="row mt-3 mb-5">
+                    <div class="col-6">
+                            <div class="card p-4 bg-warning">
+                               <p class="text-center text-white h3" routerLink="/topsales">Top Sales</p> 
+                            </div>
+                    </div>
+                    <div class="col-6">
+                            <div class="card p-4 bg-warning">
+                               <p class="text-center text-white h3" routerLink="/todaysales">Today Sales</p> 
+                            </div>
+                    </div>
+                    </div>
+                    <div class="row mt-3 mb-5">
+                        <div class="col-6">
+                                <div class="card p-4 bg-secondary">
+                                    <p class="text-center text-white h3" routerLink="/monthsales">Monthly</p>
+                                </div>
+                        </div>
+
+                        <div class="col-6">
+                                <div class="card p-4 bg-secondary">
+                                    <p class="text-center text-white h3" routerLink="/yearsales">Yearly</p>
+                                </div>
+                        </div>
+                    </div>
 
 
                 <div class="row sticky-bottom footer">

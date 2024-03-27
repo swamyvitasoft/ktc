@@ -1,19 +1,17 @@
 <div class="container-fluid p-3">
     <div class="row">
       <div class="shadow">
-        <i class="bi bi-arrow-left h3 float-start" routerLink="/additem" ></i><span class="h3">Items List</span>
+        <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard" ></i><span class="h3">Yearly Sales</span>
       <i class="bi bi-box-arrow-right h3 text-danger float-end" (click)="logout()"></i>
     </div>
     </div>
-      <div class="row mt-2" *ngFor="let i of items">
+      <div class="row mt-2" *ngFor="let s of yearsales">
           <div class="card shadow" >
             <div class="card-title">
               <div class="d-flex align-items-center justify-content-between">
-                <p class="m-1">{{i.itemname | titlecase}}</p>
-                <div>
-                  <i class="bi bi-pencil text-primary me-3"></i>
-                  <i class="bi bi-trash text-danger"></i>
-                </div>
+                <p >{{s.fullname | titlecase}}<br>({{s.mobileno}})</p>
+                <p>{{s.particulars | titlecase}}<br>{{s.items}}</p>
+                <p>{{s.estimatedamount}}<br>{{s.advanceamount}}<br>{{s.balaceamount}}</p>
               </div>
             </div>
           </div>
