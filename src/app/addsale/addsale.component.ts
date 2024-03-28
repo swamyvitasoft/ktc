@@ -48,7 +48,7 @@ export class AddSaleComponent implements OnInit {
             Validators.maxLength(20),
           ],
         ],
-        items: ['', [Validators.required]],
+        itemId: ['', [Validators.required]],
         imei: ['', [Validators.minLength(15), Validators.maxLength(15)]],
         estimatedamount: ['', [Validators.required]],
         advanceamount: ['', [Validators.required]],
