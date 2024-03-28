@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewsaleComponent } from './viewsale/viewsale.component';
-import { AddSaleComponent } from './add-sale/add-sale.component';
+import { AddSaleComponent } from './addsale/addsale.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ViewitemsComponent } from './viewitems/viewitems.component';

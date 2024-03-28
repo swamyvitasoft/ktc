@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminserviceService } from '../services/adminservice.service';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'app-add-sale',
-  templateUrl: './add-sale.component.html',
-  styleUrls: ['./add-sale.component.css'],
+  selector: 'app-addsale',
+  templateUrl: './addsale.component.html',
+  styleUrls: ['./addsale.component.css'],
 })
 export class AddSaleComponent implements OnInit {
   constructor(
