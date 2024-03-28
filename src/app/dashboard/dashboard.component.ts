@@ -5,22 +5,26 @@ import { SetgetService } from '../services/setget.service';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private api: AdminserviceService, private setget: SetgetService, private router: Router) { }
-  sales: any
-  dailyData: any
-  monthlyData: any
-  yearlyData: any
-  items: any
+  constructor(
+    private api: AdminserviceService,
+    private setget: SetgetService,
+    private router: Router
+  ) {}
+  sales: any;
+  dailyData: any;
+  monthlyData: any;
+  yearlyData: any;
+  items: any;
   ngOnInit(): void {
     this.api.getSales().subscribe((res) => {
-      this.sales = res
-    })
+      this.sales = res;
+    });
     this.api.getItems().subscribe((res) => {
-      this.items = res
-    })
+      this.items = res;
+    });
   }
   daily() {
     const currentDate = new Date();
@@ -28,11 +32,15 @@ export class DashboardComponent implements OnInit {
     const currentMonth = currentDate.getMonth() + 1;
     const currentDay = currentDate.getDate();
     this.dailyData = this.sales.filter((sale: any) => {
-      const dateParts = sale.createdAt.split('-').map((part: string) => parseInt(part, 10));
+      const dateParts = sale.createdAt
+        .split('-')
+        .map((part: string) => parseInt(part, 10));
       const [year, month, day] = dateParts;
-      return year === currentYear && month === currentMonth && day === currentDay;
-    })
-    this.setget.setDaily(this.dailyData)
+      return (
+        year === currentYear && month === currentMonth && day === currentDay
+      );
+    });
+    this.setget.setDaily(this.dailyData);
     this.router.navigate(['/todaysales']);
   }
   monthly() {
@@ -42,8 +50,8 @@ export class DashboardComponent implements OnInit {
     this.monthlyData = this.sales.filter((sale: any) => {
       const [year, month] = sale.createdAt.split('-').map(Number);
       return year === currentYear && month === currentMonth;
-    })
-    this.setget.setMonthly(this.monthlyData)
+    });
+    this.setget.setMonthly(this.monthlyData);
     this.router.navigate(['/monthsales']);
   }
   yearly() {
@@ -55,8 +63,8 @@ export class DashboardComponent implements OnInit {
         return year === currentYear;
       }
       return false;
-    })
-    this.setget.setYearly(this.yearlyData)
+    });
+    this.setget.setYearly(this.yearlyData);
     this.router.navigate(['/yearsales']);
   }
   logout() {

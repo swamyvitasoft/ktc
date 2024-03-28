@@ -12,20 +12,20 @@ import { MonthsalesComponent } from './monthsales/monthsales.component';
 import { YearsalesComponent } from './yearsales/yearsales.component';
 
 const routes: Routes = [
-  { 'path': '', component: LoginComponent },
-  { 'path': 'dashboard', component: DashboardComponent },
-  { 'path': 'viewsale', component: ViewsaleComponent },
-  { 'path': 'add-sale', component: AddSaleComponent },
-  { 'path': 'viewitems', component: ViewitemsComponent },
-  { 'path': 'additem', component: AdditemComponent },
-  { 'path': 'topsales', component: TopsalesComponent },
-  { 'path': 'todaysales', component: TodaysalesComponent },
-  { 'path': 'monthsales', component: MonthsalesComponent },
-  { 'path': 'yearsales', component: YearsalesComponent }
+  { path: '', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'viewsale', component: ViewsaleComponent },
+  { path: 'add-sale', component: AddSaleComponent },
+  { path: 'viewitems', component: ViewitemsComponent },
+  { path: 'additem', component: AdditemComponent },
+  { path: 'topsales', component: TopsalesComponent },
+  { path: 'todaysales', component: TodaysalesComponent },
+  { path: 'monthsales', component: MonthsalesComponent },
+  { path: 'yearsales', component: YearsalesComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

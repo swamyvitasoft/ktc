@@ -5,11 +5,15 @@ import { SetgetService } from '../services/setget.service';
 @Component({
   selector: 'app-todaysales',
   templateUrl: './todaysales.component.html',
-  styleUrls: ['./todaysales.component.css']
+  styleUrls: ['./todaysales.component.css'],
 })
 export class TodaysalesComponent implements OnInit {
-  constructor(private api: AdminserviceService, private setget: SetgetService, private router: Router) { }
-  dailyData: any
+  constructor(
+    private api: AdminserviceService,
+    private setget: SetgetService,
+    private router: Router
+  ) {}
+  dailyData: any;
   ngOnInit(): void {
     this.dailyData = this.setget.getDaily();
   }

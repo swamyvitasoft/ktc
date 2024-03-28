@@ -1,27 +1,24 @@
 <div class="container-fluid p-3">
-    <div class="row">
-      <div class="shadow">
-        <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard" ></i><span class="h3">Today Sales</span>
+  <div class="row">
+    <div class="shadow">
+      <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard"></i><span class="h3">Today Sales</span>
     </div>
-    </div>
-      <div class="row mt-2" *ngFor="let s of dailyData">
-          <div class="card shadow" >
-            <div class="card-title">
-              <div class="d-flex align-items-center justify-content-between">
-                <p >{{s.fullname | titlecase}}<br>({{s.mobileno}})</p>
-                <p>{{s.particulars | titlecase}}</p>
-                <p>{{s.estimatedamount}}<br>{{s.advanceamount}}<br>{{s.balaceamount}}</p>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="row shadow">
-        <div class="p-1 d-flex align-items-center justify-content-around">
-            <i class="bi bi-house h2 shadow p-2 rounded text-danger" routerLink="/dashboard"></i>
-            <i class="bi bi-power h2 shadow p-2 rounded text-danger" (click)="logout()"></i>
+  </div>
+  <div class="row mt-2" *ngFor="let s of dailyData">
+    <div class="card shadow">
+      <div class="card-title">
+        <div class="d-flex align-items-center justify-content-between">
+          <p>{{s.fullname | titlecase}}<br>({{s.mobileno}})</p>
+          <p>{{s.particulars | titlecase}}</p>
+          <p>{{s.estimatedamount}}<br>{{s.advanceamount}}<br>{{s.balaceamount}}</p>
         </div>
+      </div>
     </div>
+  </div>
+  <div class="row shadow">
+    <div class="p-1 d-flex align-items-center justify-content-around">
+      <i class="bi bi-house h2 shadow p-2 rounded text-danger" routerLink="/dashboard"></i>
+      <i class="bi bi-power h2 shadow p-2 rounded text-danger" (click)="logout()"></i>
     </div>
-    
-    
-  
+  </div>
+</div>

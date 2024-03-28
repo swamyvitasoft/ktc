@@ -1,66 +1,67 @@
 <div class="container-fluid p-3">
   <div class="row">
     <div class="shadow">
-    <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard" ></i><span class="h3">New Sale</span>
-  </div>
+      <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard"></i><span class="h3">New Sale</span>
+    </div>
   </div>
   <div class="row mt-3">
-      <div class="card">
-        <div class="card-body">
-          <a routerLink="/viewsale" class="card-title text-decoration-none text-primary">&#43; All Sales</a>
-        </div>
+    <div class="card">
+      <div class="card-body">
+        <a routerLink="/viewsale" class="card-title text-decoration-none text-primary">&#43; All Sales</a>
       </div>
+    </div>
   </div>
   <div class="row mt-3">
     <form [formGroup]="addSaleform" (ngSubmit)="addsale()">
-      <div class="row"> 
-      <div class="col-sm-6">     
-      <div class="mb-2">
-        <input type="text" class="form-control" id="fullname" formControlName="fullname" placeholder="Name">  
-      </div>
-
-      <div class="mb-2">
-          <textarea class="form-control"  id="address" formControlName="address" placeholder="Address"></textarea>
-      </div> 
-
-      <div class="mb-2">
-        <input type="number" class="form-control" id="mobileno" formControlName="mobileno" placeholder="Mobile Number">
-      </div>
-
-            
-      <div class="mb-2">
-        <input type="text" class="form-control" id="particulars" formControlName="particulars" placeholder="Particulars"> 
-      </div>
-  </div>
-  <div class="col-sm-6">
-      <div class="mb-2">
-          <select class="form-select" id="items" formControlName="items" place>
-            <option selected disabled>--Select Items--</option>
-            <option value="{{item._id}}" *ngFor="let item of items">
-              {{item.itemname}}
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="mb-2">
+            <input type="text" class="form-control" id="fullname" formControlName="fullname" placeholder="Name">
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" id="address" formControlName="address" placeholder="Address"></textarea>
+          </div>
+          <div class="mb-2">
+            <input type="number" class="form-control" id="mobileno" formControlName="mobileno"
+              placeholder="Mobile Number">
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" id="particulars" formControlName="particulars"
+              placeholder="Particulars">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-2">
+            <select class="form-select" id="items" formControlName="items" place>
+              <option selected disabled>--Select Items--</option>
+              <option value="{{item._id}}" *ngFor="let item of items">
+                {{item.itemname}}
               </option>
-          </select>
+            </select>
+          </div>
+          <div class="mb-2">
+            <input type="text" class="form-control" id="imei" formControlName="imei" placeholder="IMEI Number">
+          </div>
+          <div class="mb-2">
+            <input type="number" class="form-control" id="estimatedamount" formControlName="estimatedamount"
+              placeholder="Estimated Amount">
+          </div>
+          <div class="mb-2">
+            <input type="number" class="form-control" id="advanceamount" formControlName="advanceamount"
+              placeholder="Advance Amount">
+          </div>
+          <div class="mb-2">
+            <input type="number" class="form-control" id="balaceamount" formControlName="balaceamount" readonly
+              placeholder="Balance Amount">
+          </div>
+          <div class="mb-2">
+            <textarea class="form-control" id="note" formControlName="note" placeholder="Description"></textarea>
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary mt-2" [disabled]="addSaleform.invalid">Submit</button>
+        </div>
       </div>
-      <div class="mb-2">
-          <input type="text" class="form-control" id="imei" formControlName="imei" placeholder="IMEI Number"> 
-        </div>
-        <div class="mb-2">
-          <input type="number" class="form-control" id="estimatedamount" formControlName="estimatedamount" placeholder="Estimated Amount"> 
-        </div>
-        <div class="mb-2">
-          <input type="number" class="form-control" id="advanceamount" formControlName="advanceamount" placeholder="Advance Amount"> 
-        </div>
-        <div class="mb-2">
-          <input type="number" class="form-control" id="balaceamount" formControlName="balaceamount" readonly placeholder="Balance Amount"> 
-        </div>
-        <div class="mb-2">
-          <textarea class="form-control"  id="note" formControlName="note" placeholder="Description"></textarea>
-      </div>
-      </div>
-<div class="text-center">
-  <button type="submit" class="btn btn-primary mt-2" [disabled]="addSaleform.invalid">Submit</button>
-</div>
-</div>
-</form> 
+    </form>
   </div>
-  </div>
+</div>
