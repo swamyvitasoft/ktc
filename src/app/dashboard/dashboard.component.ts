@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { AdminserviceService } from '../adminservice.service';
+import { AdminserviceService } from '../services/adminservice.service';
 import { SetgetService } from '../services/setget.service';
 @Component({
   selector: 'app-dashboard',
