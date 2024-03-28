@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="row mt-5">
-    <form [formGroup]="addItemform">
+    <form [formGroup]="addItemform" (ngSubmit)="additem()">
       <div class="row">
         <div class="col-sm-6">
           <div class="mb-2">
@@ -16,7 +16,7 @@
           </div>
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-primary mt-2" (click)="additem()">Submit</button>
+          <button type="submit" class="btn btn-primary mt-2">Submit</button>
         </div>
       </div>
     </form>

@@ -12,45 +12,75 @@
         <div class="col-sm-6">
           <div class="mb-2">
             <input type="text" class="form-control" id="fullname" formControlName="fullname" placeholder="Name">
+            <span *ngIf="addSaleform.get('fullname')?.invalid && addSaleform.get('fullname')?.touched">
+              fullname is required.
+            </span>
           </div>
           <div class="mb-2">
             <textarea class="form-control" id="address" formControlName="address" placeholder="Address"></textarea>
+            <span *ngIf="addSaleform.get('address')?.invalid && addSaleform.get('address')?.touched">
+              address is required.
+            </span>
           </div>
           <div class="mb-2">
             <input type="number" class="form-control" id="mobileno" formControlName="mobileno"
               placeholder="Mobile Number">
+            <span *ngIf="addSaleform.get('mobileno')?.invalid && addSaleform.get('mobileno')?.touched">
+              mobileno is required.
+            </span>
           </div>
           <div class="mb-2">
             <input type="text" class="form-control" id="particulars" formControlName="particulars"
               placeholder="Particulars">
+            <span *ngIf="addSaleform.get('particulars')?.invalid && addSaleform.get('particulars')?.touched">
+              particulars is required.
+            </span>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="mb-2">
-            <select class="form-select" id="items" formControlName="items" place>
+            <select class="form-select" id="itemId" formControlName="itemId">
               <option selected disabled>--Select Items--</option>
               <option value="{{item._id}}" *ngFor="let item of items">
                 {{item.itemname}}
               </option>
             </select>
+            <span *ngIf="addSaleform.get('itemId')?.invalid && addSaleform.get('itemId')?.touched">
+              items is required.
+            </span>
           </div>
           <div class="mb-2">
             <input type="text" class="form-control" id="imei" formControlName="imei" placeholder="IMEI Number">
+            <span *ngIf="addSaleform.get('imei')?.invalid && addSaleform.get('imei')?.touched">
+              imei is required.
+            </span>
           </div>
           <div class="mb-2">
             <input type="number" class="form-control" id="estimatedamount" formControlName="estimatedamount"
               placeholder="Estimated Amount">
+            <span *ngIf="addSaleform.get('estimatedamount')?.invalid && addSaleform.get('estimatedamount')?.touched">
+              estimatedamount is required.
+            </span>
           </div>
           <div class="mb-2">
             <input type="number" class="form-control" id="advanceamount" formControlName="advanceamount"
               placeholder="Advance Amount">
+            <span *ngIf="addSaleform.get('advanceamount')?.invalid && addSaleform.get('advanceamount')?.touched">
+              advanceamount is required.
+            </span>
           </div>
           <div class="mb-2">
             <input type="number" class="form-control" id="balaceamount" formControlName="balaceamount" readonly
               placeholder="Balance Amount">
+            <span *ngIf="addSaleform.get('balaceamount')?.invalid && addSaleform.get('balaceamount')?.touched">
+              balaceamount is required.
+            </span>
           </div>
           <div class="mb-2">
             <textarea class="form-control" id="note" formControlName="note" placeholder="Description"></textarea>
+            <span *ngIf="addSaleform.get('note')?.invalid && addSaleform.get('note')?.touched">
+              balaceamount is required.
+            </span>
           </div>
         </div>
         <div class="text-center">
