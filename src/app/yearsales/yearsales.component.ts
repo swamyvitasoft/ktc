@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminserviceService } from '../adminservice.service';
 import { Router } from '@angular/router';
+import { SetgetService } from '../services/setget.service';
 
 @Component({
   selector: 'app-yearsales',
@@ -9,12 +10,10 @@ import { Router } from '@angular/router';
 })
 export class YearsalesComponent implements OnInit{
 
-  constructor(private api:AdminserviceService,private router:Router){}
-  yearsales:any
+  constructor(private api:AdminserviceService,private setget: SetgetService,private router:Router){}
+  yearlyData:any
   ngOnInit(): void {
-    this.api.getYearSales().subscribe((res)=>{
-      this.yearsales = res
-    })
+    this.yearlyData = this.setget.getYearly();
   }
 
   logout() {

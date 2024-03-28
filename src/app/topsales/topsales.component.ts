@@ -12,7 +12,7 @@ export class TopsalesComponent implements OnInit{
   constructor(private api:AdminserviceService,private router:Router){}
   topsales:any
   ngOnInit(): void {
-    this.api.getTopSales().subscribe((res)=>{
+    this.api.getSales().subscribe((res)=>{
       this.topsales = res
     })
   }
