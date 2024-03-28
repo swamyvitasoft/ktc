@@ -14,6 +14,14 @@ export class ViewitemsComponent implements OnInit {
       this.items = res;
     });
   }
+  edit(row: any){
+    this.router.navigate(['/additem']);
+  }
+  delete(data: any){
+    this.api.deleteItem(data).subscribe((res:any) => {
+      this.router.navigate(['/viewitems']);
+    });
+  }
   logout() {
     localStorage.removeItem('user');
     localStorage.removeItem('utoken');

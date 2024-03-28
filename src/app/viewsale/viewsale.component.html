@@ -1,7 +1,9 @@
 <div class="container-fluid p-3">
-  <div class="row">
-    <div class="shadow">
-      <i class="bi bi-arrow-left h3 float-start" routerLink="/add-sale"></i><span class="h3">Sales</span>
+  <div class="row shadow">
+    <div class="p-1 d-flex align-items-center justify-content-between h3">
+      <a routerLink="/add-sale" class="text-decoration-none text-secondary"><i class="bi bi-arrow-left-circle"></i></a>
+      <span class="text-warning">Sales List</span>
+      <a routerLink="/add-sale" class="text-decoration-none text-primary"><i class="bi bi-plus-circle"></i>New Sale</a>
     </div>
   </div>
   <div class="row mt-2" *ngFor="let s of sales">
@@ -15,7 +17,7 @@
       </div>
     </div>
   </div>
-  <div class="row shadow">
+  <div class="row shadow fixed-bottom">
     <div class="p-1 d-flex align-items-center justify-content-around">
       <i class="bi bi-house h2 shadow p-2 rounded text-danger" routerLink="/dashboard"></i>
       <i class="bi bi-power h2 shadow p-2 rounded text-danger" (click)="logout()"></i>

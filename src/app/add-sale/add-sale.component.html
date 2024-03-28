@@ -1,14 +1,9 @@
 <div class="container-fluid p-3">
-  <div class="row">
-    <div class="shadow">
-      <i class="bi bi-arrow-left h3 float-start" routerLink="/dashboard"></i><span class="h3">New Sale</span>
-    </div>
-  </div>
-  <div class="row mt-3">
-    <div class="card">
-      <div class="card-body">
-        <a routerLink="/viewsale" class="card-title text-decoration-none text-primary">&#43; All Sales</a>
-      </div>
+  <div class="row shadow">
+    <div class="p-1 d-flex align-items-center justify-content-between h3">
+      <a routerLink="/dashboard" class="text-decoration-none text-secondary"><i class="bi bi-arrow-left-circle"></i></a>
+      <span class="text-warning">New Sale</span>
+      <a routerLink="/viewsale" class="text-decoration-none text-primary"><i class="bi bi-card-list"></i>Sales List</a>
     </div>
   </div>
   <div class="row mt-3">
@@ -63,5 +58,11 @@
         </div>
       </div>
     </form>
+  </div>
+  <div class="row shadow fixed-bottom">
+    <div class="p-1 d-flex align-items-center justify-content-around">
+      <i class="bi bi-house h2 shadow p-2 rounded text-danger" routerLink="/dashboard"></i>
+      <i class="bi bi-power h2 shadow p-2 rounded text-danger" (click)="logout()"></i>
+    </div>
   </div>
 </div>

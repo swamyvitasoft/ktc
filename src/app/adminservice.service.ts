@@ -31,4 +31,7 @@ export class AdminserviceService {
   addItem(data: any) {
     return this.http.post(this.serverUrl + '/item/additem', data);
   }
+  deleteItem(data: any){
+    return this.http.delete(this.serverUrl + '/item/delete/'+data._id, this.jwttoken());
+  }
 }
