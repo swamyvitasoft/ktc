@@ -1,28 +1,30 @@
 <div class="container-fluid p-3">
-  <div class="row shadow">
-    <div class="p-1 d-flex align-items-center justify-content-between h3">
+  <div class="row shadow fixed-top bg-white">
+    <div class="d-flex align-items-center justify-content-around h3 p-2 mt-2">
       <a routerLink="/additem" class="text-decoration-none text-secondary"><i class="bi bi-arrow-left-circle"></i></a>
       <span class="text-warning">Item List</span>
       <a routerLink="/additem" class="text-decoration-none text-primary"><i class="bi bi-plus-circle"></i> New Item</a>
     </div>
   </div>
-  <div class="row mt-2" *ngFor="let i of items">
-    <div class="card shadow">
-      <div class="card-title">
-        <div class="d-flex align-items-center justify-content-between">
-          <p class="m-1">{{i.itemname | titlecase}}</p>
-          <div>
-            <i class="bi bi-pencil text-secondary me-3" (click)="edit(i)"></i>
-            <i class="bi bi-trash text-warning" (click)="delete(i)"></i>
+  <div style="margin-top: 65px;">
+    <div class="row mt-2" *ngFor="let i of items">
+      <div class="card shadow">
+        <div class="card-title">
+          <div class="d-flex align-items-center justify-content-between">
+            <p class="m-1">{{i.itemname | titlecase}}</p>
+            <div>
+              <i class="bi bi-pencil text-secondary me-3" (click)="edit(i)"></i>
+              <i class="bi bi-trash text-warning" (click)="delete(i)"></i>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row shadow fixed-bottom">
-    <div class="p-1 d-flex align-items-center justify-content-around">
-      <i class="bi bi-house h2 shadow p-2 rounded text-danger" routerLink="/dashboard"></i>
-      <i class="bi bi-power h2 shadow p-2 rounded text-danger" (click)="logout()"></i>
+  <div class="row fixed-bottom bg-dark text-white bg-opacity-50">
+    <div class="d-flex align-items-center justify-content-around">
+      <i class="bi bi-house h2 p-3 rounded-circle shadow" routerLink="/dashboard"></i>
+      <i class="bi bi-power h2 p-3 rounded-circle shadow" (click)="logout()"></i>
     </div>
   </div>
 </div>

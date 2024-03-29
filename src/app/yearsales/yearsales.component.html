@@ -1,26 +1,28 @@
 <div class="container-fluid p-3">
-  <div class="row shadow">
-    <div class="p-1 d-flex align-items-center justify-content-between h3">
+  <div class="row shadow fixed-top bg-white">
+    <div class="d-flex align-items-center justify-content-around h3 p-2 mt-2">
       <a routerLink="/dashboard" class="text-decoration-none text-secondary"><i class="bi bi-arrow-left-circle"></i></a>
       <span class="text-warning">Top Sales</span>
       <a routerLink="/additem" class="text-decoration-none text-primary"><i class="bi bi-plus-circle"></i> New Item</a>
     </div>
   </div>
-  <div class="row mt-2" *ngFor="let s of yearlyData">
-    <div class="card shadow">
-      <div class="card-title">
-        <div class="d-flex align-items-center justify-content-between">
-          <p>{{s.fullname | titlecase}}<br>({{s.mobileno}})</p>
-          <p>{{s.particulars | titlecase}}</p>
-          <p>{{s.estimatedamount}}<br>{{s.advanceamount}}<br>{{s.balaceamount}}</p>
+  <div style="margin-top: 65px;">
+    <div class="row mt-2" *ngFor="let s of yearlyData">
+      <div class="card shadow">
+        <div class="card-title">
+          <div class="d-flex align-items-center justify-content-between">
+            <p>{{s.fullname | titlecase}}<br>({{s.mobileno}})</p>
+            <p>{{s.particulars | titlecase}}</p>
+            <p>{{s.estimatedamount}}<br>{{s.advanceamount}}<br>{{s.balaceamount}}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row shadow fixed-bottom">
-    <div class="p-1 d-flex align-items-center justify-content-around">
-      <i class="bi bi-house h2 shadow p-2 rounded text-danger" routerLink="/dashboard"></i>
-      <i class="bi bi-power h2 shadow p-2 rounded text-danger" (click)="logout()"></i>
+  <div class="row fixed-bottom bg-dark text-white bg-opacity-50">
+    <div class="d-flex align-items-center justify-content-around">
+      <i class="bi bi-house h2 p-3 rounded-circle shadow" routerLink="/dashboard"></i>
+      <i class="bi bi-power h2 p-3 rounded-circle shadow" (click)="logout()"></i>
     </div>
   </div>
 </div>
