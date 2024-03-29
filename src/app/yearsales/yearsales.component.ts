@@ -14,8 +14,16 @@ export class YearsalesComponent implements OnInit {
     private router: Router
   ) {}
   yearlyData: any;
+  total: number = 0;
+  advance: number = 0;
+  balance: number = 0;
   ngOnInit(): void {
     this.yearlyData = this.setget.getYearly();
+    this.yearlyData?.forEach((sale: any) => {
+      this.total = this.total + sale.estimatedamount;
+      this.advance = this.advance + sale.advanceamount;
+      this.balance = this.balance + sale.balaceamount;
+    });
   }
   logout() {
     localStorage.removeItem('user');

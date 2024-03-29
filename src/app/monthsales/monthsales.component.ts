@@ -14,8 +14,16 @@ export class MonthsalesComponent implements OnInit {
     private router: Router
   ) {}
   monthlyData: any;
+  total: number = 0;
+  advance: number = 0;
+  balance: number = 0;
   ngOnInit(): void {
     this.monthlyData = this.setget.getMonthly();
+    this.monthlyData?.forEach((sale: any) => {
+      this.total = this.total + sale.estimatedamount;
+      this.advance = this.advance + sale.advanceamount;
+      this.balance = this.balance + sale.balaceamount;
+    });
   }
   logout() {
     localStorage.removeItem('user');

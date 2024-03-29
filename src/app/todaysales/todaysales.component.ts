@@ -14,8 +14,16 @@ export class TodaysalesComponent implements OnInit {
     private router: Router
   ) {}
   dailyData: any;
+  total: number = 0;
+  advance: number = 0;
+  balance: number = 0;
   ngOnInit(): void {
     this.dailyData = this.setget.getDaily();
+    this.dailyData?.forEach((sale: any) => {
+      this.total = this.total + sale.estimatedamount;
+      this.advance = this.advance + sale.advanceamount;
+      this.balance = this.balance + sale.balaceamount;
+    });
   }
   logout() {
     localStorage.removeItem('user');

@@ -9,9 +9,17 @@ import { Router } from '@angular/router';
 export class ViewsaleComponent implements OnInit {
   constructor(private api: AdminserviceService, private router: Router) {}
   sales: any;
+  total: number = 0;
+  advance: number = 0;
+  balance: number = 0;
   ngOnInit(): void {
     this.api.getSales().subscribe((res) => {
       this.sales = res;
+      this.sales?.forEach((sale: any) => {
+        this.total = this.total + sale.estimatedamount;
+        this.advance = this.advance + sale.advanceamount;
+        this.balance = this.balance + sale.balaceamount;
+      });
     });
   }
   logout() {

@@ -8,9 +8,9 @@
   </div>
   <div class="row card fixed-top shadow bg-white" style="margin-top: 65px;">
     <div class="p-2 d-flex align-items-center justify-content-around">
-      <p>Total:<br>1000</p>
-      <p>Advanced:<br>1000</p>
-      <p>Balance:<br>1000</p>
+      <p>Total:<br>{{total}}</p>
+      <p>Advanced:<br>{{advance}}</p>
+      <p>Balance:<br>{{balance}}</p>
     </div>
   </div>
   <div style="margin-top: 130px;">
@@ -59,8 +59,14 @@
             Balance Rs:
             <span class="text-primary">{{s.balaceamount}}</span>
           </div>
-          <!-- <a href="#" class="card-link">Edit</a>
-          <a href="#" class="card-link">Delete</a> -->
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-around align-items-center p-2">
+            <i class="bi bi-pencil text-secondary"></i>
+            <i class="bi bi-trash text-primary"></i>
+            <a href="https://wa.me/{{s.mobileno}}/?text=Your due amount{{s.balaceamount}}"><i
+                class="bi bi-whatsapp text-success"></i></a>
+          </div>
         </div>
       </div>
     </div>
