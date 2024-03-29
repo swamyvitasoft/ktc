@@ -18,6 +18,7 @@ export class AddSaleComponent implements OnInit {
   ngOnInit(): void {
     this.addSaleform = this.fb.group(
       {
+        sno: ['', [Validators.required]],
         fullname: [
           '',
           [
