@@ -17,6 +17,7 @@ export class AdditemComponent implements OnInit {
   ngOnInit(): void {
     this.addItemform = this.fb.group({
       itemname: ['', [Validators.required]],
+      status: ['active'],
     });
   }
   additem() {

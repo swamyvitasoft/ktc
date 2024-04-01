@@ -62,6 +62,7 @@ export class AddSaleComponent implements OnInit {
             Validators.maxLength(100),
           ],
         ],
+        status: ['active'],
       },
       { validator: this.amountValidator }
     );

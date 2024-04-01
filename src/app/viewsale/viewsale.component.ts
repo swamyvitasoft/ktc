@@ -13,6 +13,9 @@ export class ViewsaleComponent implements OnInit {
   advance: number = 0;
   balance: number = 0;
   ngOnInit(): void {
+    this.allSales();
+  }
+  allSales(){
     this.api.getSales().subscribe((res) => {
       this.sales = res;
       this.sales?.forEach((sale: any) => {
@@ -20,6 +23,15 @@ export class ViewsaleComponent implements OnInit {
         this.advance = this.advance + sale.advanceamount;
         this.balance = this.balance + sale.balaceamount;
       });
+    });
+  }
+  edit(row: any){
+    this.router.navigate(['/addsale']);
+  }
+  delete(data: any){
+    this.api.deleteSale(data).subscribe((res:any) => {
+      this.allSales();
+      this.router.navigate(['/viewsale']);
     });
   }
   logout() {

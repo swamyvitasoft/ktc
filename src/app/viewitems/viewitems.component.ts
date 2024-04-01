@@ -10,6 +10,9 @@ export class ViewitemsComponent implements OnInit {
   constructor(private api: AdminserviceService, private router: Router) {}
   items: any;
   ngOnInit(): void {
+    this.allItems();
+  }
+  allItems(){
     this.api.getItems().subscribe((res) => {
       this.items = res;
     });
@@ -19,6 +22,7 @@ export class ViewitemsComponent implements OnInit {
   }
   delete(data: any){
     this.api.deleteItem(data).subscribe((res:any) => {
+      this.allItems();
       this.router.navigate(['/viewitems']);
     });
   }
