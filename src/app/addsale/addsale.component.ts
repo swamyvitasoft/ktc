@@ -100,9 +100,4 @@ export class AddSaleComponent implements OnInit {
       console.log(res, 'addsale');
     });
   }
-  logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('utoken');
-    this.router.navigate(['/']);
-  }
 }

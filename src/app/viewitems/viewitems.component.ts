@@ -26,9 +26,4 @@ export class ViewitemsComponent implements OnInit {
       this.router.navigate(['/viewitems']);
     });
   }
-  logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('utoken');
-    this.router.navigate(['/']);
-  }
 }

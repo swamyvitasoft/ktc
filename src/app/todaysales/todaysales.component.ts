@@ -25,9 +25,4 @@ export class TodaysalesComponent implements OnInit {
       this.balance = this.balance + sale.balaceamount;
     });
   }
-  logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('utoken');
-    this.router.navigate(['/']);
-  }
 }

@@ -22,9 +22,4 @@ export class TopsalesComponent implements OnInit {
       });
     });
   }
-  logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('utoken');
-    this.router.navigate(['/']);
-  }
 }

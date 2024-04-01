@@ -1,0 +1,27 @@
+<div class="row fixed-bottom bg-dark text-white bg-opacity-50">
+    <div class="d-flex align-items-center justify-content-around">
+        <i class="bi bi-house h2 p-3 rounded-circle shadow" routerLink="/dashboard"></i>
+        <i class="bi bi-search h2 p-3 rounded-circle shadow" data-bs-toggle="modal" data-bs-target="#searchModal"></i>
+        <i class="bi bi-power h2 p-3 rounded-circle shadow" (click)="logout()"></i>
+    </div>
+</div>
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form [formGroup]="searchform" (ngSubmit)="search()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Serial Number / Phone Number</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="search" formControlName="search"
+                        placeholder="Serial Number / Phone Number">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

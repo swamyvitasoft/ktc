@@ -15,6 +15,8 @@ import { TopsalesComponent } from './topsales/topsales.component';
 import { TodaysalesComponent } from './todaysales/todaysales.component';
 import { MonthsalesComponent } from './monthsales/monthsales.component';
 import { YearsalesComponent } from './yearsales/yearsales.component';
+import { SearchComponent } from './search/search.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { YearsalesComponent } from './yearsales/yearsales.component';
     TopsalesComponent,
     TodaysalesComponent,
     MonthsalesComponent,
-    YearsalesComponent
+    YearsalesComponent,
+    SearchComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

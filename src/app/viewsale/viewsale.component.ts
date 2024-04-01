@@ -34,9 +34,4 @@ export class ViewsaleComponent implements OnInit {
       this.router.navigate(['/viewsale']);
     });
   }
-  logout() {
-    localStorage.removeItem('user');
-    localStorage.removeItem('utoken');
-    this.router.navigate(['/']);
-  }
 }
