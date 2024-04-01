@@ -8,6 +8,7 @@ export class SetgetService {
   yearlyData: any;
   searchData: any;
   item: any;
+  sale: any;
   constructor() {}
   setDaily(dailyData: any) {
     this.dailyData = dailyData;
@@ -33,10 +34,16 @@ export class SetgetService {
   getSearch() {
     return this.searchData;
   }
-  setEditItem(item:any){
+  setEditSale(sale: any) {
+    this.sale = sale;
+  }
+  getEditSale() {
+    return this.sale;
+  }
+  setEditItem(item: any) {
     this.item = item;
   }
-  getEditItem(){
+  getEditItem() {
     return this.item;
   }
 }

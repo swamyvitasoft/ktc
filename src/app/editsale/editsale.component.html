@@ -1,1 +1,101 @@
-<p>editsale works!</p>
+<div class="container-fluid p-3">
+    <div class="row shadow fixed-top bg-white">
+      <div class="d-flex align-items-center justify-content-around h3 p-2 mt-2">
+        <a routerLink="/dashboard" class="text-decoration-none text-secondary"><i class="bi bi-arrow-left-circle"></i></a>
+        <span class="text-warning">Edit Sale</span>
+        <a routerLink="/viewsale" class="text-decoration-none text-primary"><i class="bi bi-card-list"></i>Sales List</a>
+      </div>
+    </div>
+    <div style="margin-top: 65px;">
+      <div class="row mt-3">
+        <form [formGroup]="editSaleform" (ngSubmit)="editsale()">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="mb-2">
+                <input type="text" class="form-control" id="sno" formControlName="sno" placeholder="Serial Number">
+                <span *ngIf="editSaleform.get('sno')?.invalid && editSaleform.get('sno')?.touched">
+                  Serial number is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="text" class="form-control" id="fullname" formControlName="fullname" placeholder="Name">
+                <span *ngIf="editSaleform.get('fullname')?.invalid && editSaleform.get('fullname')?.touched">
+                  Fullname is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <textarea class="form-control" id="address" formControlName="address" placeholder="Address"></textarea>
+                <span *ngIf="editSaleform.get('address')?.invalid && editSaleform.get('address')?.touched">
+                  Address is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="number" class="form-control" id="mobileno" formControlName="mobileno"
+                  placeholder="Mobile Number">
+                <span *ngIf="editSaleform.get('mobileno')?.invalid && editSaleform.get('mobileno')?.touched">
+                  Mobile number is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="text" class="form-control" id="particulars" formControlName="particulars"
+                  placeholder="Particulars">
+                <span *ngIf="editSaleform.get('particulars')?.invalid && editSaleform.get('particulars')?.touched">
+                  Particulars is required.
+                </span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="mb-2">
+                <select class="form-select" id="itemId" formControlName="itemId">
+                  <option selected disabled>--Select Items--</option>
+                  <option value="{{item._id}}" *ngFor="let item of items">
+                    {{item.itemname}}
+                  </option>
+                </select>
+                <span *ngIf="editSaleform.get('itemId')?.invalid && editSaleform.get('itemId')?.touched">
+                  Items is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="text" class="form-control" id="imei" formControlName="imei" placeholder="IMEI Number">
+                <span *ngIf="editSaleform.get('imei')?.invalid && editSaleform.get('imei')?.touched">
+                  IMEI is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="number" class="form-control" id="estimatedamount" formControlName="estimatedamount"
+                  placeholder="Estimated Amount">
+                <span *ngIf="editSaleform.get('estimatedamount')?.invalid && editSaleform.get('estimatedamount')?.touched">
+                  Estimated amount is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="number" class="form-control" id="advanceamount" formControlName="advanceamount"
+                  placeholder="Advance Amount">
+                <span *ngIf="editSaleform.get('advanceamount')?.invalid && editSaleform.get('advanceamount')?.touched">
+                  Advance amount is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <input type="number" class="form-control" id="balaceamount" formControlName="balaceamount" readonly
+                  placeholder="Balance Amount">
+                <span *ngIf="editSaleform.get('balaceamount')?.invalid && editSaleform.get('balaceamount')?.touched">
+                  Balace amount is required.
+                </span>
+              </div>
+              <div class="mb-2">
+                <textarea class="form-control" id="note" formControlName="note" placeholder="Description"></textarea>
+                <span *ngIf="editSaleform.get('note')?.invalid && editSaleform.get('note')?.touched">
+                  Description is required.
+                </span>
+              </div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary mt-2" [disabled]="editSaleform.invalid">Update</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>

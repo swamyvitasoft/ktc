@@ -25,6 +25,13 @@ export class AdminserviceService {
   getSales() {
     return this.http.get(this.serverUrl + '/sale/getsales', this.jwttoken());
   }
+  updateSale(data: any) {
+    return this.http.put(
+      this.serverUrl + '/sale/update/' + data._id,
+      data,
+      this.jwttoken()
+    );
+  }
   deleteSale(data: any) {
     return this.http.delete(
       this.serverUrl + '/sale/delete/' + data._id,

@@ -37,9 +37,11 @@ export class AddSaleComponent implements OnInit {
         ],
         mobileno: [
           '',
-          [Validators.required],
-          Validators.minLength(10),
-          Validators.maxLength(10),
+          [
+            Validators.required,
+            Validators.minLength(10),
+            Validators.maxLength(10),
+          ],
         ],
         particulars: [
           '',
