@@ -10,6 +10,7 @@ import { TopsalesComponent } from './topsales/topsales.component';
 import { TodaysalesComponent } from './todaysales/todaysales.component';
 import { MonthsalesComponent } from './monthsales/monthsales.component';
 import { YearsalesComponent } from './yearsales/yearsales.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'todaysales', component: TodaysalesComponent },
   { path: 'monthsales', component: MonthsalesComponent },
   { path: 'yearsales', component: YearsalesComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({

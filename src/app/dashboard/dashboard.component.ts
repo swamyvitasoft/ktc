@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminserviceService } from '../services/adminservice.service';
 import { SetgetService } from '../services/setget.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -9,16 +10,22 @@ import { SetgetService } from '../services/setget.service';
 })
 export class DashboardComponent implements OnInit {
   constructor(
+    private fb1: FormBuilder,
     private api: AdminserviceService,
     private setget: SetgetService,
     private router: Router
   ) {}
+  searchform!: FormGroup;
+  items: any;
   sales: any;
   dailyData: any;
   monthlyData: any;
   yearlyData: any;
-  items: any;
+  searchData: any;
   ngOnInit(): void {
+    this.searchform = this.fb1.group({
+      search: ['', [Validators.required]],
+    });
     this.api.getSales().subscribe((res) => {
       this.sales = res;
     });
@@ -66,6 +73,17 @@ export class DashboardComponent implements OnInit {
     });
     this.setget.setYearly(this.yearlyData);
     this.router.navigate(['/yearsales']);
+  }
+  search() {
+    let filterText = this.searchform.value.search;
+    this.searchData = [];
+    this.searchData.push(
+      this.sales.filter(
+        (x: any) => x.sno === Number(filterText) || x.mobileno === filterText
+      )[0]
+    );
+    this.setget.setSearch(this.searchData);
+    this.router.navigate(['/search']);
   }
   logout() {
     localStorage.removeItem('user');

@@ -6,6 +6,7 @@ export class SetgetService {
   dailyData: any;
   monthlyData: any;
   yearlyData: any;
+  searchData: any;
   constructor() {}
   setDaily(dailyData: any) {
     this.dailyData = dailyData;
@@ -24,5 +25,11 @@ export class SetgetService {
   }
   getYearly() {
     return this.yearlyData;
+  }
+  setSearch(searchData: any) {
+    this.searchData = searchData;
+  }
+  getSearch() {
+    return this.searchData;
   }
 }
