@@ -17,6 +17,8 @@ import { MonthsalesComponent } from './monthsales/monthsales.component';
 import { YearsalesComponent } from './yearsales/yearsales.component';
 import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
+import { EdititemComponent } from './edititem/edititem.component';
+import { EditsaleComponent } from './editsale/editsale.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { FooterComponent } from './footer/footer.component';
     MonthsalesComponent,
     YearsalesComponent,
     SearchComponent,
-    FooterComponent
+    FooterComponent,
+    EdititemComponent,
+    EditsaleComponent
   ],
   imports: [
     BrowserModule,

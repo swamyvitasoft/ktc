@@ -1,0 +1,29 @@
+<div class="container-fluid p-3">
+    <div class="row shadow fixed-top bg-white">
+        <div class="d-flex align-items-center justify-content-around h3 p-2 mt-2">
+            <a routerLink="/dashboard" class="text-decoration-none text-secondary"><i
+                    class="bi bi-arrow-left-circle"></i></a>
+            <span class="text-warning">Edit Item</span>
+            <a routerLink="/viewitems" class="text-decoration-none text-primary"><i class="bi bi-card-list"></i> Items
+                List</a>
+        </div>
+    </div>
+    <div style="margin-top: 65px;">
+        <div class="row mt-5">
+            <form [formGroup]="editItemform" (ngSubmit)="edititem()">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="mb-2">
+                            <input type="text" class="form-control" id="itemname" formControlName="itemname"
+                                placeholder="Item Name">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary mt-2">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>

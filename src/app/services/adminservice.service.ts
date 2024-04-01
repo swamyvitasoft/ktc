@@ -19,23 +19,36 @@ export class AdminserviceService {
   adminLogin(data: any) {
     return this.http.post(this.serverUrl + '/user/login', data);
   }
-  getSales() {
-    return this.http.get(this.serverUrl + '/sale/getsales', this.jwttoken());
-  }
   addSale(data: any) {
     return this.http.post(this.serverUrl + '/sale/addsale', data);
   }
-  deleteSale(data: any){
-    return this.http.delete(this.serverUrl + '/sale/delete/'+data._id, this.jwttoken());
+  getSales() {
+    return this.http.get(this.serverUrl + '/sale/getsales', this.jwttoken());
+  }
+  deleteSale(data: any) {
+    return this.http.delete(
+      this.serverUrl + '/sale/delete/' + data._id,
+      this.jwttoken()
+    );
   }
 
-  getItems() {
-    return this.http.get(this.serverUrl + '/item/getitems', this.jwttoken());
-  }
   addItem(data: any) {
     return this.http.post(this.serverUrl + '/item/additem', data);
   }
-  deleteItem(data: any){
-    return this.http.delete(this.serverUrl + '/item/delete/'+data._id, this.jwttoken());
+  getItems() {
+    return this.http.get(this.serverUrl + '/item/getitems', this.jwttoken());
+  }
+  updateItem(data: any) {
+    return this.http.put(
+      this.serverUrl + '/item/update/' + data._id,
+      data,
+      this.jwttoken()
+    );
+  }
+  deleteItem(data: any) {
+    return this.http.delete(
+      this.serverUrl + '/item/delete/' + data._id,
+      this.jwttoken()
+    );
   }
 }

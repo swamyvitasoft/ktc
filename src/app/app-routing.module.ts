@@ -11,14 +11,18 @@ import { TodaysalesComponent } from './todaysales/todaysales.component';
 import { MonthsalesComponent } from './monthsales/monthsales.component';
 import { YearsalesComponent } from './yearsales/yearsales.component';
 import { SearchComponent } from './search/search.component';
+import { EdititemComponent } from './edititem/edititem.component';
+import { EditsaleComponent } from './editsale/editsale.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'viewsale', component: ViewsaleComponent },
-  { path: 'addsale', component: AddSaleComponent },
-  { path: 'viewitems', component: ViewitemsComponent },
   { path: 'additem', component: AdditemComponent },
+  { path: 'edititem', component: EdititemComponent },
+  { path: 'viewitems', component: ViewitemsComponent },
+  { path: 'addsale', component: AddSaleComponent },
+  { path: 'editsale', component: EditsaleComponent },
+  { path: 'viewsale', component: ViewsaleComponent },
   { path: 'topsales', component: TopsalesComponent },
   { path: 'todaysales', component: TodaysalesComponent },
   { path: 'monthsales', component: MonthsalesComponent },
