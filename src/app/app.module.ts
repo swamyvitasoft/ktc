@@ -19,6 +19,7 @@ import { SearchComponent } from './search/search.component';
 import { FooterComponent } from './footer/footer.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditsaleComponent } from './editsale/editsale.component';
+import { CustomersComponent } from './customers/customers.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { EditsaleComponent } from './editsale/editsale.component';
     SearchComponent,
     FooterComponent,
     EdititemComponent,
-    EditsaleComponent
+    EditsaleComponent,
+    CustomersComponent
   ],
   imports: [
     BrowserModule,

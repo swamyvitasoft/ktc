@@ -69,4 +69,7 @@ export class DashboardComponent implements OnInit {
     this.setget.setYearly(this.yearlyData);
     this.router.navigate(['/yearsales']);
   }
+  customers() {
+    this.router.navigate(['/customers']);
+  }
 }

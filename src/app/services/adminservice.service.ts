@@ -38,6 +38,9 @@ export class AdminserviceService {
       this.jwttoken()
     );
   }
+  getCustomers(){
+    return this.http.get(this.serverUrl + '/sale/getCustomers', this.jwttoken());
+  }
 
   addItem(data: any) {
     return this.http.post(this.serverUrl + '/item/additem', data);

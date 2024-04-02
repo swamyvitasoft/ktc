@@ -13,6 +13,7 @@ import { YearsalesComponent } from './yearsales/yearsales.component';
 import { SearchComponent } from './search/search.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditsaleComponent } from './editsale/editsale.component';
+import { CustomersComponent } from './customers/customers.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'monthsales', component: MonthsalesComponent },
   { path: 'yearsales', component: YearsalesComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'customers', component: CustomersComponent },
 ];
 
 @NgModule({
