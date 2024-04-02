@@ -3,30 +3,16 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SetgetService {
-  dailyData: any;
-  monthlyData: any;
-  yearlyData: any;
+  salesList: any;
   searchData: any;
-  item: any;
   sale: any;
+  item: any;
   constructor() {}
-  setDaily(dailyData: any) {
-    this.dailyData = dailyData;
+  setSalesList(salesList: any) {
+    this.salesList = salesList;
   }
-  getDaily() {
-    return this.dailyData;
-  }
-  setMonthly(monthlyData: any) {
-    this.monthlyData = monthlyData;
-  }
-  getMonthly() {
-    return this.monthlyData;
-  }
-  setYearly(yearlyData: any) {
-    this.yearlyData = yearlyData;
-  }
-  getYearly() {
-    return this.yearlyData;
+  getSalesList() {
+    return this.salesList;
   }
   setSearch(searchData: any) {
     this.searchData = searchData;

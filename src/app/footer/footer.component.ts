@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class FooterComponent implements OnInit {
   constructor(
     private fb1: FormBuilder,
-    private api: AdminserviceService,
     private setget: SetgetService,
     private router: Router
   ) {}
@@ -23,9 +22,7 @@ export class FooterComponent implements OnInit {
     this.searchform = this.fb1.group({
       search: ['', [Validators.required]],
     });
-    this.api.getSales().subscribe((res) => {
-      this.sales = res;
-    });
+    this.sales = this.setget.getSalesList();
   }
   search() {
     let filterText = this.searchform.value.search;

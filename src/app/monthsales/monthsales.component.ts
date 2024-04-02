@@ -15,6 +15,9 @@ export class MonthsalesComponent implements OnInit {
   balance: number = 0;
   createdAt: any;
   ngOnInit(): void {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    console.log(currentYear,'currentYear');
     this.api.getMonthly().subscribe((res: any) => {
       this.monthlyData = res;
       this.monthlyData?.forEach((sale: any) => {
