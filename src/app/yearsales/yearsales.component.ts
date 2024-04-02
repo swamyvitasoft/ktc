@@ -14,7 +14,7 @@ export class YearsalesComponent implements OnInit {
   advance: number = 0;
   balance: number = 0;
   ngOnInit(): void {
-    this.api.getYearly().subscribe((res) => {
+    this.api.getYearly().subscribe((res:any) => {
       this.yearlyData = res;
       this.yearlyData?.forEach((sale: any) => {
         this.total = this.total + sale.totalEstimatedAmount;
