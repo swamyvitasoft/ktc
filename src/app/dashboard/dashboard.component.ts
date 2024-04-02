@@ -17,9 +17,6 @@ export class DashboardComponent implements OnInit {
   ) {}
   items: any;
   sales: any;
-  dailyData: any;
-  monthlyData: any;
-  yearlyData: any;
   ngOnInit(): void {
     this.api.getSales().subscribe((res) => {
       this.sales = res;
@@ -29,20 +26,6 @@ export class DashboardComponent implements OnInit {
     });
   }
   daily() {
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    const currentMonth = currentDate.getMonth() + 1;
-    const currentDay = currentDate.getDate();
-    this.dailyData = this.sales.filter((sale: any) => {
-      const dateParts = sale.createdAt
-        .split('-')
-        .map((part: string) => parseInt(part, 10));
-      const [year, month, day] = dateParts;
-      return (
-        year === currentYear && month === currentMonth && day === currentDay
-      );
-    });
-    this.setget.setDaily(this.dailyData);
     this.router.navigate(['/todaysales']);
   }
   monthly() {

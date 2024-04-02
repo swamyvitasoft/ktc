@@ -2,7 +2,7 @@
   <div class="row shadow fixed-top bg-white">
     <div class="d-flex align-items-center justify-content-around h3 p-2 mt-2">
       <a routerLink="/dashboard" class="text-decoration-none text-secondary"><i class="bi bi-arrow-left-circle"></i></a>
-      <span class="text-warning">Monthly Sale</span>
+      <span class="text-warning">{{monthlyData[0].createdAt | date: 'y'}} Sales</span>
       <a routerLink="/addsale" class="text-decoration-none text-primary"><i class="bi bi-plus-circle"></i> New Sale</a>
     </div>
   </div>

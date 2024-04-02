@@ -9,20 +9,20 @@ import { SetgetService } from '../services/setget.service';
 })
 export class TodaysalesComponent implements OnInit {
   constructor(
-    private api: AdminserviceService,
-    private setget: SetgetService,
-    private router: Router
+    private api: AdminserviceService
   ) {}
   dailyData: any;
   total: number = 0;
   advance: number = 0;
   balance: number = 0;
   ngOnInit(): void {
-    this.dailyData = this.setget.getDaily();
-    this.dailyData?.forEach((sale: any) => {
-      this.total = this.total + sale.estimatedamount;
-      this.advance = this.advance + sale.advanceamount;
-      this.balance = this.balance + sale.balaceamount;
+    this.api.getDaily().subscribe((res: any) => {
+      this.dailyData = res;
+      this.dailyData?.forEach((sale: any) => {
+        this.total = this.total + sale.totalEstimatedAmount;
+        this.advance = this.advance + sale.totalAdvanceAmount;
+        this.balance = this.balance + sale.totalBalanceAmount;
+      });
     });
   }
 }

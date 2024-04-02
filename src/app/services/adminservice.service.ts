@@ -47,6 +47,9 @@ export class AdminserviceService {
   getMonthly(){
     return this.http.get(this.serverUrl + '/sale/getMonthly', this.jwttoken());
   }
+  getDaily(){
+    return this.http.get(this.serverUrl + '/sale/getDaily', this.jwttoken());
+  }
 
   addItem(data: any) {
     return this.http.post(this.serverUrl + '/item/additem', data);
