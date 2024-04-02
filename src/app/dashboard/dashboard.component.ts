@@ -57,16 +57,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/monthsales']);
   }
   yearly() {
-    const currentDate = new Date();
-    const currentYear = currentDate.getFullYear();
-    this.yearlyData = this.sales.filter((sale: any) => {
-      if (sale.createdAt) {
-        const year = new Date(sale.createdAt).getFullYear();
-        return year === currentYear;
-      }
-      return false;
-    });
-    this.setget.setYearly(this.yearlyData);
     this.router.navigate(['/yearsales']);
   }
   customers() {

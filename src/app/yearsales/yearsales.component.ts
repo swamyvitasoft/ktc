@@ -8,21 +8,19 @@ import { SetgetService } from '../services/setget.service';
   styleUrls: ['./yearsales.component.css'],
 })
 export class YearsalesComponent implements OnInit {
-  constructor(
-    private api: AdminserviceService,
-    private setget: SetgetService,
-    private router: Router
-  ) {}
+  constructor(private api: AdminserviceService) {}
   yearlyData: any;
   total: number = 0;
   advance: number = 0;
   balance: number = 0;
   ngOnInit(): void {
-    this.yearlyData = this.setget.getYearly();
-    this.yearlyData?.forEach((sale: any) => {
-      this.total = this.total + sale.estimatedamount;
-      this.advance = this.advance + sale.advanceamount;
-      this.balance = this.balance + sale.balaceamount;
+    this.api.getYearly().subscribe((res) => {
+      this.yearlyData = res;
+      this.yearlyData?.forEach((sale: any) => {
+        this.total = this.total + sale.totalEstimatedAmount;
+        this.advance = this.advance + sale.totalAdvanceAmount;
+        this.balance = this.balance + sale.totalBalanceAmount;
+      });
     });
   }
 }
