@@ -13,12 +13,12 @@ export class TopsalesComponent implements OnInit {
   advance: number = 0;
   balance: number = 0;
   ngOnInit(): void {
-    this.api.getSales().subscribe((res) => {
+    this.api.getTopsales().subscribe((res:any) => {
       this.topsales = res;
       this.topsales?.forEach((sale: any) => {
-        this.total = this.total + sale.estimatedamount;
-        this.advance = this.advance + sale.advanceamount;
-        this.balance = this.balance + sale.balaceamount;
+        this.total = this.total + sale.totalEstimatedAmount;
+        this.advance = this.advance + sale.totalAdvanceAmount;
+        this.balance = this.balance + sale.totalBalanceAmount;
       });
     });
   }

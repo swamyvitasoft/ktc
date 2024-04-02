@@ -13,10 +13,12 @@ export class MonthsalesComponent implements OnInit {
   total: number = 0;
   advance: number = 0;
   balance: number = 0;
+  createdAt: any;
   ngOnInit(): void {
     this.api.getMonthly().subscribe((res: any) => {
       this.monthlyData = res;
       this.monthlyData?.forEach((sale: any) => {
+        this.createdAt = sale.createdAt
         this.total = this.total + sale.estimatedTotalAmount;
         this.advance = this.advance + sale.advanceTotalAmount;
         this.balance = this.balance + sale.balanceTotalAmount;
