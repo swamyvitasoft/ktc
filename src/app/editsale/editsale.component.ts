@@ -21,8 +21,6 @@ export class EditsaleComponent implements OnInit {
   sale: any;
   ngOnInit(): void {
     this.sale = this.setget.getEditSale();
-    console.log(this.sale, 'sale');
-
     this.editSaleform = this.fb.group(
       {
         _id: [this.sale._id],
@@ -90,7 +88,6 @@ export class EditsaleComponent implements OnInit {
     this.editSaleform.get('advanceamount')?.valueChanges.subscribe((value) => {
       this.updateDueAmount();
     });
-    console.log(this.editSaleform.value, 'this.editSaleform');
   }
   amountValidator(form: FormGroup) {
     const estimatedamount = form.get('estimatedamount')?.value;
@@ -113,7 +110,6 @@ export class EditsaleComponent implements OnInit {
   editsale() {
     this.api.updateSale(this.editSaleform.value).subscribe((res) => {
       this.router.navigate(['/viewsale']);
-      console.log(res, 'addsale');
     });
   }
 }

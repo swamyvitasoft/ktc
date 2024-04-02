@@ -23,7 +23,6 @@ export class AdditemComponent implements OnInit {
   additem() {
     this.api.addItem(this.addItemform.value).subscribe((res) => {
       this.router.navigate(['/viewitems']);
-      console.log(res, 'addsale');
     });
   }
 }

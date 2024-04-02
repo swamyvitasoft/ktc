@@ -99,7 +99,6 @@ export class AddSaleComponent implements OnInit {
   addsale() {
     this.api.addSale(this.addSaleform.value).subscribe((res) => {
       this.router.navigate(['/viewsale']);
-      console.log(res, 'addsale');
     });
   }
 }
