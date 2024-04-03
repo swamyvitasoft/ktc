@@ -73,4 +73,7 @@ export class AdminserviceService {
       this.jwttoken()
     );
   }
+  getExport(data: any) {
+    return this.http.post(this.serverUrl + '/sale/getExport', data);
+  }
 }

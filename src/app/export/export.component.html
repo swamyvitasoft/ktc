@@ -1,0 +1,20 @@
+<div class="container-fluid p-3">
+    <div class="row shadow fixed-top bg-white">
+        <div class="d-flex align-items-center justify-content-around h3 p-2 mt-2">
+            <a routerLink="/dashboard" class="text-decoration-none text-secondary"><i
+                    class="bi bi-arrow-left-circle"></i></a>
+            <span class="text-warning">Export Excel</span>
+            <a routerLink="/addsale" class="text-decoration-none text-primary"><i class="bi bi-plus-circle"></i>New
+                Sale</a>
+        </div>
+    </div>
+    <div class="p-3" style="margin-top: 65px;">
+        <form [formGroup]="exportform" (ngSubmit)="exportToExcel()">
+            <input type="date" class="form-control mt-3" id="datefrom" formControlName="datefrom"
+                placeholder="Date From">
+            <input type="date" class="form-control mt-3" id="dateto" formControlName="dateto" placeholder="Date To">
+            <button type="submit" class="btn btn-success mt-3">Export to Excel</button>
+        </form>
+    </div>
+    <app-footer></app-footer>
+</div>

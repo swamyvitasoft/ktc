@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditsaleComponent } from './editsale/editsale.component';
 import { CustomersComponent } from './customers/customers.component';
+import { ExportComponent } from './export/export.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CustomersComponent } from './customers/customers.component';
     FooterComponent,
     EdititemComponent,
     EditsaleComponent,
-    CustomersComponent
+    CustomersComponent,
+    ExportComponent
   ],
   imports: [
     BrowserModule,

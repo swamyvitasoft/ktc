@@ -14,6 +14,7 @@ import { SearchComponent } from './search/search.component';
 import { EdititemComponent } from './edititem/edititem.component';
 import { EditsaleComponent } from './editsale/editsale.component';
 import { CustomersComponent } from './customers/customers.component';
+import { ExportComponent } from './export/export.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'yearsales', component: YearsalesComponent },
   { path: 'search', component: SearchComponent },
   { path: 'customers', component: CustomersComponent },
+  { path: 'export', component: ExportComponent },
 ];
 
 @NgModule({
