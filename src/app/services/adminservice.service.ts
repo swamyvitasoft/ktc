@@ -44,6 +44,13 @@ export class AdminserviceService {
   getCustomers(){
     return this.http.get(this.serverUrl + '/sale/getCustomers', this.jwttoken());
   }
+  updateSettings(data: any) {
+    return this.http.put(
+      this.serverUrl + '/user/settings/' + data._id,
+      data,
+      this.jwttoken()
+    );
+  }
   getYearly(){
     return this.http.get(this.serverUrl + '/sale/getYearly', this.jwttoken());
   }

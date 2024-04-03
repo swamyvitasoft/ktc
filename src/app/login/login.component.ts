@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.api.adminLogin(this.adminLoginform.value).subscribe((res: any) => {
       if (res) {
-        localStorage.setItem('user', JSON.stringify(res.user));
+        localStorage.setItem('user', JSON.stringify(res.User));
         localStorage.setItem('utoken', res.token);
         this.router.navigate(['/dashboard']);
       } else {

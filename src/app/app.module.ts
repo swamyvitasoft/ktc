@@ -21,6 +21,7 @@ import { EdititemComponent } from './edititem/edititem.component';
 import { EditsaleComponent } from './editsale/editsale.component';
 import { CustomersComponent } from './customers/customers.component';
 import { ExportComponent } from './export/export.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ExportComponent } from './export/export.component';
     EdititemComponent,
     EditsaleComponent,
     CustomersComponent,
-    ExportComponent
+    ExportComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
