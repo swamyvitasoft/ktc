@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
     <img src="../assets/logo.png" class="rounded mx-auto d-block p-2 w-50">
     <h1 class="text-center mt-3">Sign In</h1>
     <form [formGroup]="adminLoginform" (ngSubmit)="login()">
@@ -13,4 +13,5 @@
             <button type="submit" class="btn btn-success float-end" [disabled]="adminLoginform.invalid">Sign In</button>
         </div>
     </form>
+    <p class="text-center text-primary text-uppercase h6" routerLink="/forgot">Forgot Password ?</p>
 </div>

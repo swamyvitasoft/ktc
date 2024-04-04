@@ -19,6 +19,9 @@ export class AdminserviceService {
   adminLogin(data: any) {
     return this.http.post(this.serverUrl + '/user/login', data);
   }
+  forgotLogin(data: any) {
+    return this.http.post(this.serverUrl + '/user/forgot', data);
+  }
   addSale(data: any) {
     return this.http.post(this.serverUrl + '/sale/addsale', data);
   }

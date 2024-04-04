@@ -30,9 +30,14 @@ export class SettingsComponent implements OnInit {
   }
   changePwd() {
     this.api.updateSettings(this.settingsform.value).subscribe((res) => {
-      localStorage.removeItem('user');
-      localStorage.removeItem('utoken');
-      this.router.navigate(['/']);
+      if(res){
+        localStorage.removeItem('user');
+        localStorage.removeItem('utoken');
+        this.router.navigate(['/']);
+      }
+      else{
+        alert("Network Issue");
+      }
     });
   }
 }

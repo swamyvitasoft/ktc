@@ -16,6 +16,7 @@ import { EditsaleComponent } from './editsale/editsale.component';
 import { CustomersComponent } from './customers/customers.component';
 import { ExportComponent } from './export/export.component';
 import { SettingsComponent } from './settings/settings.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'customers', component: CustomersComponent },
   { path: 'export', component: ExportComponent },
   { path: 'settings', component: SettingsComponent },
+  { path: 'forgot', component: ForgotComponent },
 ];
 
 @NgModule({
