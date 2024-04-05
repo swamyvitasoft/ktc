@@ -28,6 +28,7 @@ export class ExcelService {
     const a: HTMLAnchorElement = document.createElement('a');
     a.href = url;
     a.download = fileName + '.xlsx';
+    a.target = "_new";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

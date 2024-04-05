@@ -9,7 +9,8 @@ import { SetgetService } from '../services/setget.service';
 })
 export class TodaysalesComponent implements OnInit {
   constructor(
-    private api: AdminserviceService
+    private api: AdminserviceService,
+    private setget: SetgetService
   ) {}
   dailyData: any;
   total: number = 0;
@@ -17,10 +18,11 @@ export class TodaysalesComponent implements OnInit {
   balance: number = 0;
   createdAt: any;
   ngOnInit(): void {
-    this.api.getDaily().subscribe((res: any) => {
+    const monthyear = this.setget.getMonthYear();
+    this.api.getDaily(monthyear).subscribe((res: any) => {
       this.dailyData = res;
       this.dailyData?.forEach((sale: any) => {
-        this.createdAt = sale.createdAt
+        this.createdAt = sale.createdAt;
         this.total = this.total + sale.totalEstimatedAmount;
         this.advance = this.advance + sale.totalAdvanceAmount;
         this.balance = this.balance + sale.totalBalanceAmount;

@@ -41,11 +41,14 @@ export class AdminserviceService {
       this.jwttoken()
     );
   }
-  getTopsales(){
+  getTopsales() {
     return this.http.get(this.serverUrl + '/sale/getTopsales', this.jwttoken());
   }
-  getCustomers(){
-    return this.http.get(this.serverUrl + '/sale/getCustomers', this.jwttoken());
+  getCustomers() {
+    return this.http.get(
+      this.serverUrl + '/sale/getCustomers',
+      this.jwttoken()
+    );
   }
   updateSettings(data: any) {
     return this.http.put(
@@ -54,14 +57,31 @@ export class AdminserviceService {
       this.jwttoken()
     );
   }
-  getYearly(){
+  getYearly() {
     return this.http.get(this.serverUrl + '/sale/getYearly', this.jwttoken());
   }
-  getMonthly(){
-    return this.http.get(this.serverUrl + '/sale/getMonthly', this.jwttoken());
+  getMonthly(fromYear: any) {
+    const data = {
+      fromYear: Number(fromYear),
+      nextYear: Number(fromYear) + 1,
+    };
+    return this.http.post(
+      this.serverUrl + '/sale/getMonthly',
+      data,
+      this.jwttoken()
+    );
   }
-  getDaily(){
-    return this.http.get(this.serverUrl + '/sale/getDaily', this.jwttoken());
+  getDaily(monthyear: any) {
+    let monthyear1 = monthyear.split('-');
+    const data = {
+      month: Number(monthyear1[0]),
+      year: Number(monthyear1[1]),
+    };
+    return this.http.post(
+      this.serverUrl + '/sale/getDaily',
+      data,
+      this.jwttoken()
+    );
   }
 
   addItem(data: any) {
