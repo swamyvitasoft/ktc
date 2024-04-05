@@ -15,6 +15,10 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder
   ) {}
   ngOnInit(): void {
+    let token = localStorage.getItem('utoken');
+    if (token) {
+      this.router.navigate(['/dashboard']);
+    }
     this.adminLoginform = this.fb.group({
       mobileno: [
         '',
